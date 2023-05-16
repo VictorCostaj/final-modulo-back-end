@@ -1,4 +1,6 @@
-import express from "express";
+// import express from "express";
+const express = require(express);
+
 const crypto = require("node:crypto");
 
 const app = express();
@@ -94,7 +96,7 @@ app.post("/login", (request, response) => {
 
 // ## CRIAR RECADOS ###
 
-const listaRecados = []
+const listaRecados = [];
 
 app.post("/recados", (request, response) => {
   const usuario = listaUsuarios.find((user) => user.logado === true);
@@ -189,9 +191,7 @@ app.delete("/recados/delete/:id", (request, response) => {
     });
   }
 
-  const indexRecado = listaRecados.findIndex(
-    (recado) => recado.id == recadoId
-  );
+  const indexRecado = listaRecados.findIndex((recado) => recado.id == recadoId);
 
   if (indexRecado < 0) {
     return response.status(400).json({
