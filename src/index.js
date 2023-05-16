@@ -1,7 +1,5 @@
 // import express from "express";
-const express = require('express');
-
-const crypto = require("node:crypto");
+const express = require('express')
 
 const app = express();
 
@@ -118,7 +116,7 @@ app.post("/recados", (request, response) => {
   }
 
   const novoRecado = {
-    id: crypto.randomUUID(),
+    id: new Date().getTime(),
     titulo: recado.titulo,
     descricao: recado.descricao,
     autor: usuario,
