@@ -1,5 +1,5 @@
 // import express from "express";
-const express = require('express')
+const express = require("express");
 
 const app = express();
 
@@ -8,7 +8,11 @@ app.use(express.json());
 app.listen(8080, () => console.log("Servidor iniciado"));
 
 app.get("/", (request, response) => {
-  return response.status(200).send("<h1>Bem vindo à API de Recados</h1>");
+  return response
+    .status(200)
+    .send(
+      "<h1>Bem vindo à API de Recados</h1> <p><b>## CRIANDO USUÁRIOS##</b>  <br> rota : /users <br><br>   <b>##LOGIN##</b>  <br> rota : /login </p>  <b>## CRIAR RECADOS ##</b><br> rota: /recados <br><p><b>## ATUALIZAR RECADOS##</b>  <br> rota : /recados/:id <br> <p><b>## DELETAR RECADOS##</b>  <br> rota : /recados/delete/:id<br><br>"
+    );
 });
 
 //##### DATABASE ###
